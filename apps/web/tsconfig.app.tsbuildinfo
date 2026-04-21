@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/context/teacherdashboardcontext.tsx","./src/pages/studentpage.tsx","./src/pages/teacherpage.tsx","./src/services/api.ts","./src/types/domain.ts"],"version":"5.9.3"}

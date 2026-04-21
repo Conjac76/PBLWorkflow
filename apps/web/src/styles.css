@@ -1,0 +1,285 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  color: #13213a;
+  background: #f5f8ff;
+}
+
+body {
+  margin: 0;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #1f3b73;
+  color: #fff;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.topbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.page {
+  padding: 0 1rem 1rem 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.student-layout {
+  transition: grid-template-columns 0.22s ease;
+  gap: 1rem;
+}
+
+.student-layout.nav-collapsed {
+  grid-template-columns: 84px repeat(3, minmax(0, 1fr));
+}
+
+.layout.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.panel {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #cad4e5;
+  border-radius: 0.375rem;
+  font: inherit;
+}
+
+button {
+  background: #2e5aac;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card-btn {
+  text-align: left;
+}
+
+.indicator-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+.indicator-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.78rem;
+  border: 1px solid transparent;
+}
+
+.indicator-list-item {
+  border-radius: 0.35rem;
+  padding: 0.35rem 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.indicator-high {
+  background: #fde8e8;
+  border-color: #f5b6b6;
+  color: #a11a1a;
+}
+
+.indicator-medium {
+  background: #fff5e6;
+  border-color: #ffd9a8;
+  color: #8c4a00;
+}
+
+.indicator-low {
+  background: #eaf7ee;
+  border-color: #b8e0c2;
+  color: #0f5c2a;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: #e5ecfb;
+}
+
+.error {
+  color: #c62828;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav-menu {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, #1f3b73, #2e5aac);
+  color: #fff;
+  border-radius: 0.15rem;
+  min-height: calc(100vh - 2.5rem);
+  transition: width 0.22s ease, transform 0.22s ease;
+  transform: translateX(0);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.nav-menu.collapsed {
+  width: 84px;
+  transform: translateX(0);
+}
+
+.student-layout > .panel:not(.nav-menu) {
+  margin-top: 1rem;
+}
+
+.nav-menu h2,
+.nav-menu h3,
+.nav-menu label {
+  color: #fff;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.nav-toggle {
+  width: auto;
+  min-width: 48px;
+  margin-top: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.nav-menu li button {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: left;
+}
+
+.nav-menu li button.selected {
+  background: #fff;
+  color: #1f3b73;
+  border-color: #fff;
+  font-weight: 600;
+}
+
+.nav-menu select,
+.nav-menu input {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.group-create-input {
+  width: 94%;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.timeline-main-line {
+  position: absolute;
+  left: 0.4rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #c8d6f2;
+}
+
+.timeline-date-group {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-date {
+  font-weight: 600;
+  color: #1f3b73;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-event-row {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  align-items: start;
+  margin: 0.2rem 0;
+}
+
+.timeline-connector {
+  width: 18px;
+  border-top: 2px solid #c8d6f2;
+  margin-right: 0.4rem;
+  margin-top: 0.9rem;
+}
+
+.timeline-event {
+  display: inline-block;
+  width: fit-content;
+  background: #eef3ff;
+  border: 1px solid #d5e1fb;
+  border-radius: 0.35rem;
+  padding: 0.15rem 0.45rem;
+  color: #13213a;
+  cursor: pointer;
+  margin-top: 0;
+}
+
+.timeline-event.checkin {
+  background: #f6f8fc;
+}
+
+.stack-col {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.timeline-detail {
+  grid-column: 2;
+  margin-top: 0.35rem;
+  margin-bottom: 0.45rem;
+  background: #fff;
+  border: 1px solid #d5e1fb;
+  border-radius: 0.35rem;
+  padding: 0.45rem 0.55rem;
+}
+
+.nav-menu.collapsed li button {
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 0.5rem 0.25rem;
+}
