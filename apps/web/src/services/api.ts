@@ -1,6 +1,10 @@
 import { Artifact, CheckIn, Comment, Group, GroupSnapshot, Milestone, Project } from "../types/domain";
 
-const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:4000";
+const API_URL =
+  import.meta.env.VITE_API_URL ??
+  (typeof window !== "undefined" && window.location.hostname !== "localhost"
+    ? "https://pblworkflow.onrender.com"
+    : "http://localhost:4000");
 
 const request = async <T>(path: string, init?: RequestInit): Promise<T> => {
   const response = await fetch(`${API_URL}${path}`, {

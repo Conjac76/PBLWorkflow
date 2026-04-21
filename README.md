@@ -68,6 +68,15 @@ npm run dev
 npm run build
 ```
 
+## Render frontend deployment (Static Site)
+
+- Root Directory: `apps/web`
+- Build Command: `npm install && npm run build`
+- Publish Directory: `dist`
+- Environment Variable: `VITE_API_URL=https://pblworkflow.onrender.com`
+
+SPA routing support is included via `apps/web/public/_redirects`.
+
 ## API map (core endpoints)
 
 ### Student mode
