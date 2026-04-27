@@ -10,7 +10,7 @@
 
 ## Usability
 - Student UI minimizes required fields.
-- Teacher cards show attention-first state in one scan.
+- Teacher cards show attention first state in one scan.
 
 ## Interpretability
 - Every triggered indicator must include plain language rationale and evidence links.

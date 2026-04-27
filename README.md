@@ -1,6 +1,6 @@
 # Student Workflow Driven Management Tool (PBL)
 
-Note: 
+Note: Render's Free tier has cold starts and may take up to 30 seconds to load at first.
 - Live frontend: https://pblworkflow-1.onrender.com
 - Live backend: https://pblworkflow.onrender.com/health
 

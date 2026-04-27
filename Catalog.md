@@ -8,6 +8,7 @@ Date: April 21, 2026
 
 ### Option A: Test live deployment
 **Note**: Render's free tier has cold starts so it may take up to 60 seconds to load at first.
+
 1. Open frontend: https://pblworkflow-1.onrender.com/student
 2. Verify student mode:
    - Navigate groups
