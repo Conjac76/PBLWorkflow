@@ -1,83 +1,74 @@
 # Student Workflow Driven Management Tool (PBL)
 
-Web app for project based learning managment with:
-- Student workflow mode (milestones, artifacts, check ins, comments)
-- Teacher dashboard mode (group monitoring, evidence view, ranked indicators)
+Note: 
+- Live frontend: https://pblworkflow-1.onrender.com
+- Live backend: https://pblworkflow.onrender.com/health
 
-## Current project status
+A two-mode web app for project-based learning orchestration:
+- **Student mode:** milestones, artifacts, check-ins, tagged comments
+- **Teacher mode:** group dashboard, evidence timeline, ranked/color-coded indicators
 
-### Student mode
-- Left navigation with unit/group selection and group creation
-- Milestone board with fields:
-  - title, description, goal date (optional), status, definition of done
-- Artifact workflow:
-  - link upload, milestone tagging, notes
-  - optional explicit revision tagging
-- Timeline view:
-  - grouped by date
-  - clickable artifacts/check ins with item details
-- Separate check in and comments panels
-- Comments are tagged to specific items (artifact/check in/milestone)
+## Final Status
 
-### Teacher mode
-- Dashboard home with group cards
-- Card fields:
-  - current milestone
-  - time since last update
-  - help requested flag
-  - top ranked indicators
-- Color coded indicator severity and explicit rank
-- Evidence view with same timeline structure as student mode
-- Teacher feedback/comments on timeline items, visible in student mode
-- Context layer for dashboard state management
+### Implemented
+- Student workflow UI with collapsible navigation and group context
+- Milestone board (title, description, goal date, status, definition of done)
+- Artifact workflow (link upload, milestone tagging, optional revision tagging)
+- Timeline grouped by date with expandable artifact/check-in details
+- Separate check-in and comments panels
+- Teacher dashboard home + group evidence view
+- Teacher feedback on timeline items, visible on student side
+- Indicator engine with ranking + severity coloring
+- Event logging model on create/update actions
+- Seeded demo groups for indicator coverage
 
-### Analytics and eventing
-- Indicator computation (ranked top 3 per group):
-  - progress_trajectory
-  - help_seeking (over-help / under-help)
-  - milestone_drift
-  - revision_frequency
-  - gaming
-  - wheel_spinning
-- Event log model with write trigger behavior on create/update actions
-- Multi group demo data for indicator coverage
-- Indicator trigger reference: `docs/architecture/05-indicator-triggers.md`
+### Indicators
+- `progress_trajectory`
+- `help_seeking` (over-help / under-help)
+- `milestone_drift`
+- `revision_frequency`
+- `gaming`
+- `wheel_spinning`
 
-## Tech stack
+Trigger reference: `docs/architecture/05-indicator-triggers.md`
+
+## Stack
 - Frontend: React + TypeScript + Vite
 - Backend: Node.js + Express + TypeScript + Zod
-- Data layer: in-memory store for local demo
+- Runtime data layer: in-memory store (seeded for demo)
 
-## Local run
+## Local Run
 
-1) Install dependencies:
 ```bash
 npm install
-```
-
-2) Start API + web:
-```bash
 npm run dev
 ```
 
-- API: `http://localhost:4000`
-- Web: `http://localhost:5173`
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:4000`
 
-3) Build check:
+Build check:
+
 ```bash
 npm run build
 ```
 
-## Render frontend deployment (Static Site)
+## Render Deployment
 
+### Backend (Web Service)
+- Root Directory: `apps/api`
+- Build Command: `npm install && npm run build`
+- Start Command: `npm start`
+
+### Frontend (Static Site)
 - Root Directory: `apps/web`
 - Build Command: `npm install && npm run build`
 - Publish Directory: `dist`
 - Environment Variable: `VITE_API_URL=https://pblworkflow.onrender.com`
 
-SPA routing support is included via `apps/web/public/_redirects`.
+SPA fallback is configured via `apps/web/public/_redirects`.
 
-## API map (core endpoints)
+## API Endpoints (Core)
 
 ### Student mode
 - `GET /api/student/navigation`
@@ -95,8 +86,3 @@ SPA routing support is included via `apps/web/public/_redirects`.
 ### Teacher mode
 - `GET /api/teacher/groups`
 - `GET /api/teacher/groups/:groupId/evidence`
-
-## Known gaps / next priorities
-- PostgreSQL runtime integration (replace in-memory store)
-- Cloud deployment (API + web)
-- Auth/roles hardening (student vs teacher permissions)
