@@ -4,9 +4,9 @@ Note: Render's Free tier has cold starts and may take up to 30 seconds to load a
 - Live frontend: https://pblworkflow-1.onrender.com
 - Live backend: https://pblworkflow.onrender.com/health
 
-A two-mode web app for project-based learning orchestration:
-- **Student mode:** milestones, artifacts, check-ins, tagged comments
-- **Teacher mode:** group dashboard, evidence timeline, ranked/color-coded indicators
+A two mode web app for project based learning orchestration:
+- **Student mode:** milestones, artifacts, check ins, tagged comments
+- **Teacher mode:** group dashboard, evidence timeline, ranked/color coded indicators
 
 ## Final Status
 
@@ -14,8 +14,8 @@ A two-mode web app for project-based learning orchestration:
 - Student workflow UI with collapsible navigation and group context
 - Milestone board (title, description, goal date, status, definition of done)
 - Artifact workflow (link upload, milestone tagging, optional revision tagging)
-- Timeline grouped by date with expandable artifact/check-in details
-- Separate check-in and comments panels
+- Timeline grouped by date with expandable artifact/check in details
+- Separate check in and comments panels
 - Teacher dashboard home + group evidence view
 - Teacher feedback on timeline items, visible on student side
 - Indicator engine with ranking + severity coloring
@@ -24,7 +24,7 @@ A two-mode web app for project-based learning orchestration:
 
 ### Indicators
 - `progress_trajectory`
-- `help_seeking` (over-help / under-help)
+- `help_seeking` (over help / under help)
 - `milestone_drift`
 - `revision_frequency`
 - `gaming`
@@ -35,7 +35,7 @@ Trigger reference: `docs/architecture/05-indicator-triggers.md`
 ## Stack
 - Frontend: React + TypeScript + Vite
 - Backend: Node.js + Express + TypeScript + Zod
-- Runtime data layer: in-memory store (seeded for demo)
+- Runtime data layer: in memory store (seeded for demo)
 
 ## Local Run
 
